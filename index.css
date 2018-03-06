@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dice{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+}
+.item{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+}
+.one{
+    align-items: center;
+    justify-content: center;
+}
+.two{
+    justify-content: space-between;
+}
+.two .item:nth-child(2){
+    align-self: flex-end;
+}
+.three{
+    justify-content: space-between;
+}
+.three .item:nth-child(2){
+    align-self: center;
+}
+.three .item:nth-child(3){
+    align-self: flex-end;
+}
+.four{
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.four .column{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.five{
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.five .column{
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+.five .column:nth-child(2){
+    justify-content: center;
+}
+/*垂直*/
+.six,.eight{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.six .column,.eight .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*水平*/
+/*.six,.eight{*/
+    /*flex-wrap: wrap;*/
+    /*align-content: space-between;*/
+/*}*/
+/*.six .column,.eight .column{*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: space-between;*/
+    /*flex-basis: 100%;*/
+/*}*/
+.seven{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.seven .column{
+    display: flex;
+}
+.seven .column:nth-child(1){
+    align-self: start;
+}
+.seven .column:nth-child(2){
+    align-self: center;
+}
+.seven .column:nth-child(3){
+    align-self: flex-end;
+}
+.seven .column:nth-child(4),.seven .column:nth-child(5){
+    align-self: flex-end;
+    flex-basis: 100%;
+    justify-content: space-around;
+}
+.nine{
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+}
+.nine .column{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+/*圣杯布局*/
+.HolyGrail {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header,
+footer {
+    flex: 1;
+}
+
+.HolyGrail-body {
+    display: flex;
+    flex: 1;
+}
+
+.HolyGrail-content {
+    flex: 1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+    /* 两个边栏的宽度设为12em */
+    flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+    /* 导航放到最左边 */
+    order: -1;
+}
+@media (max-width: 768px) {
+    .HolyGrail-body {
+        flex-direction: column;
+        flex: 1;
+    }
+    .HolyGrail-nav,
+    .HolyGrail-ads,
+    .HolyGrail-content {
+        flex: auto;
+    }
+}
